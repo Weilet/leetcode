@@ -1,12 +1,9 @@
-"""
-# Definition for a Node.
-class Node(object):
-    def __init__(self, val, children):
-        self.val = val
-        self.children = children
-"""
-
-from functools import reduce
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
 
 class Solution(object):
     def maxDepth(self, root):
@@ -14,14 +11,8 @@ class Solution(object):
         :type root: Node
         :rtype: int
         """
-        length = []
         if not root:
-            return
-        else:
-            pass
+            return 0
+        return max(1 + self.maxDepth(root.left), 1 + self.maxDepth(root.right))
 
-
-if __name__ == '__main__':
-    l = [[1, 1], 1, 1]
-    max(l)
 
